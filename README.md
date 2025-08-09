@@ -14,6 +14,14 @@
 - **Dark/Light Themes**: Customizable editor themes
 - **Authentication**: Secure user registration and login with JWT
 
+### 🤖 AI-Powered Features
+- **Smart Code Completion**: Context-aware code suggestions using OpenAI GPT
+- **Intelligent Code Review**: Automated code analysis with scoring and suggestions
+- **Code Explanation**: Natural language explanations of complex code blocks
+- **Error Detection & Fixing**: AI-powered error identification and resolution
+- **Code Generation**: Natural language to code conversion
+- **Usage Analytics**: AI interaction tracking and productivity insights
+
 ## 🎯 Project Goals
 
 This project demonstrates mastery of:
@@ -51,6 +59,7 @@ npm run dev
 
 **Frontend**: React 18, TypeScript, Monaco Editor, Socket.io-client, Tailwind CSS, Zustand
 **Backend**: Node.js, Express, Socket.io, MongoDB, Redis, JWT Authentication
+**AI Integration**: OpenAI GPT-4/3.5-turbo for code assistance and analysis
 **Real-time**: WebSockets, Operational Transformation
 **Testing**: Vitest, Jest, React Testing Library, Playwright
 **Development**: Vite, ESLint, Prettier
@@ -58,10 +67,11 @@ npm run dev
 ## 🏆 Why This Project Stands Out
 
 1. **Technical Complexity**: Implements advanced distributed systems concepts
-2. **Modern Stack**: Uses cutting-edge technologies valued by top companies
-3. **Real-world Problem**: Solves actual developer collaboration challenges
-4. **Production Ready**: Comprehensive testing and error handling
-5. **Resume Worthy**: Demonstrates full-stack development skills
+2. **AI Integration**: Modern AI-powered code assistance using OpenAI APIs
+3. **Modern Stack**: Uses cutting-edge technologies valued by top companies
+4. **Real-world Problem**: Solves actual developer collaboration challenges
+5. **Production Ready**: Comprehensive testing and error handling
+6. **Resume Worthy**: Demonstrates full-stack development skills with AI/ML integration
 
 ## 🚀 Getting Started
 
@@ -69,6 +79,7 @@ npm run dev
 - Node.js 18+
 - MongoDB (local or Atlas)
 - Redis (optional, has fallback)
+- OpenAI API Key (optional, for AI features)
 
 ### Installation
 ```bash
@@ -80,7 +91,7 @@ cd codesync
 npm run install:all
 
 # Create environment files
-# backend/.env - Add MongoDB URI and JWT secret
+# backend/.env - Add MongoDB URI, JWT secret, and OpenAI API key
 # frontend/.env - Add API URLs
 
 # Start development

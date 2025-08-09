@@ -12,6 +12,7 @@ import { setupSocket } from './socket'
 import authRoutes from './routes/auth'
 import roomRoutes from './routes/rooms'
 import fileRoutes from './routes/files'
+import aiRoutes from './routes/ai'
 import { errorHandler } from './middleware/errorHandler'
 import { logger } from './utils/logger'
 
@@ -64,6 +65,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRoutes)
 app.use('/api/rooms', roomRoutes)
 app.use('/api/files', fileRoutes)
+app.use('/api/ai', aiRoutes)
 
 // Error handling
 app.use(errorHandler)

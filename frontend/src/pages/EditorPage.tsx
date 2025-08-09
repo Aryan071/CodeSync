@@ -6,7 +6,8 @@ import {
   UsersIcon,
   ShareIcon,
   Cog6ToothIcon,
-  ArrowLeftIcon
+  ArrowLeftIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels'
 import { useAuthStore } from '../store/authStore'
@@ -15,6 +16,7 @@ import { socketService } from '../services/socket'
 import FileTree from '../components/editor/FileTree'
 import EditorTabs from '../components/editor/EditorTabs'
 import MonacoEditor from '../components/editor/MonacoEditor'
+import AIAssistant from '../components/editor/AIAssistant'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import api from '../services/api'
 import toast from 'react-hot-toast'
@@ -37,6 +39,7 @@ const EditorPage: React.FC = () => {
   const [room, setRoom] = useState<any>(null)
   const [connectedUsers, setConnectedUsers] = useState<any[]>([])
   const [showUserList, setShowUserList] = useState(false)
+  const [showAIAssistant, setShowAIAssistant] = useState(false)
 
   useEffect(() => {
     if (!roomId) {
@@ -213,6 +216,15 @@ const EditorPage: React.FC = () => {
             {theme === 'light' ? '🌙' : '☀️'}
           </button>
 
+          {/* AI Assistant */}
+          <button
+            onClick={() => setShowAIAssistant(true)}
+            className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            title="AI Assistant"
+          >
+            <SparklesIcon className="h-5 w-5" />
+          </button>
+
           {/* Settings */}
           <button
             className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
@@ -272,6 +284,18 @@ const EditorPage: React.FC = () => {
           </Panel>
         </PanelGroup>
       </div>
+
+      {/* AI Assistant Modal */}
+      <AIAssistant
+        isOpen={showAIAssistant}
+        onClose={() => setShowAIAssistant(false)}
+        currentFile={activeFile ? {
+          id: activeFile.id,
+          name: activeFile.name,
+          content: activeFile.content || '',
+          language: activeFile.language || 'javascript'
+        } : undefined}
+      />
 
       {/* Click outside to close user list */}
       {showUserList && (
