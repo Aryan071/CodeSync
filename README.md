@@ -75,7 +75,6 @@ npm run dev
 ## 📱 Demo
 
 - **Live Demo**: [https://codesync-demo.vercel.app](https://codesync-demo.vercel.app)
-- **Video Demo**: [YouTube Demo](https://youtube.com/watch?v=demo)
 
 ## 👥 Contributing
 
